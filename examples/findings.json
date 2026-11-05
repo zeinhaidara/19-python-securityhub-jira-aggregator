@@ -1,0 +1,54 @@
+{
+  "Findings": [
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:subscription/aws-foundational-security/v/1.0.0/finding/1111",
+      "Title": "S3 bucket has public read access",
+      "Description": "Bucket policy grants s3:GetObject to Principal *.",
+      "Severity": { "Label": "CRITICAL" },
+      "AwsAccountId": "123456789012",
+      "Region": "us-east-1",
+      "Resources": [{ "Id": "arn:aws:s3:::payments-exports", "Type": "AwsS3Bucket" }],
+      "Workflow": { "Status": "NEW" }
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:subscription/aws-foundational-security/v/1.0.0/finding/2222",
+      "Title": "Security group allows unrestricted SSH access",
+      "Description": "Port 22 open to 0.0.0.0/0.",
+      "Severity": { "Label": "HIGH" },
+      "AwsAccountId": "123456789012",
+      "Region": "us-east-1",
+      "Resources": [{ "Id": "arn:aws:ec2:us-east-1:123456789012:security-group/sg-0abc", "Type": "AwsEc2SecurityGroup" }],
+      "Workflow": { "Status": "NEW" }
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:subscription/aws-foundational-security/v/1.0.0/finding/3333",
+      "Title": "IAM user has an unused access key older than 90 days",
+      "Description": "Access key has not been used in 120 days.",
+      "Severity": { "Label": "MEDIUM" },
+      "AwsAccountId": "123456789012",
+      "Region": "us-east-1",
+      "Resources": [{ "Id": "arn:aws:iam::123456789012:user/build-bot", "Type": "AwsIamAccessKey" }],
+      "Workflow": { "Status": "NEW" }
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:subscription/aws-foundational-security/v/1.0.0/finding/4444",
+      "Title": "CloudTrail is not enabled in all regions",
+      "Description": "Multi-region trail is disabled for this account.",
+      "Severity": { "Label": "LOW" },
+      "AwsAccountId": "123456789012",
+      "Region": "us-east-1",
+      "Resources": [{ "Id": "arn:aws:cloudtrail:us-east-1:123456789012:trail/default", "Type": "AwsCloudTrailTrail" }],
+      "Workflow": { "Status": "NEW" }
+    },
+    {
+      "Id": "arn:aws:securityhub:us-east-1:123456789012:subscription/aws-foundational-security/v/1.0.0/finding/5555",
+      "Title": "EBS volume is not encrypted",
+      "Description": "Volume was created without encryption.",
+      "Severity": { "Label": "HIGH" },
+      "AwsAccountId": "123456789012",
+      "Region": "us-east-1",
+      "Resources": [{ "Id": "arn:aws:ec2:us-east-1:123456789012:volume/vol-0dead", "Type": "AwsEc2Volume" }],
+      "Workflow": { "Status": "RESOLVED" }
+    }
+  ]
+}
