@@ -1,0 +1,5 @@
+{
+  "arn:aws:s3:::payments-exports": "CRITICAL",
+  "arn:aws:ec2:us-east-1:123456789012:security-group/sg-0abc": "HIGH",
+  "arn:aws:iam::123456789012:user/build-bot": "LOW"
+}
