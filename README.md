@@ -1,4 +1,4 @@
-# securityhub-jira-aggregator
+# Security Hub to Jira aggregator
 
 A Python CLI that reads AWS Security Hub findings, ranks them by severity
 combined with asset criticality, and opens one Jira ticket per finding that
@@ -119,7 +119,7 @@ Running the tool repeatedly against the same findings - in the same run
 or a later one - creates at most one ticket per finding; see
 `DryRunJiraClientTests.test_rerun_is_idempotent` in the test suite.
 
-## Tests
+## Validation
 
 ```bash
 pip install -r requirements-test.txt
