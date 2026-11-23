@@ -5,6 +5,11 @@ combined with asset criticality, and opens one Jira ticket per finding that
 clears the priority bar - skipping anything that already has an open
 ticket.
 
+Why it matters: Security Hub can hold hundreds of findings, and the same
+severity means very different things on a test box and on a payment
+database. Ranking by both and opening tickets only for the top ones gives
+teams a short list they can act on.
+
 **Scope.** The default and tested mode reads a static Security Hub
 `GetFindings`-shaped JSON export and a static asset-criticality JSON map
 from disk - there is no live call to the Security Hub API. Jira access
@@ -129,3 +134,10 @@ python -m unittest discover -s tests
 Tests run entirely against the fixtures in `examples/` and an in-memory
 `DryRunJiraClient` - no network access or real Jira/AWS credentials
 required. The real `JiraClient` and `--execute` path are not covered.
+
+## Known limitations
+
+- Reads an exported findings file only; there is no live Security Hub call.
+- `--execute` against real Jira is untested.
+- Asset criticality is a hand-maintained JSON map.
+- AWS only; Azure is out of scope.
